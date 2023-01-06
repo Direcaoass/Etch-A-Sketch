@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  text-align: center;
+}
+
+body{
+  background-color: gray;
+}
+
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: gray;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  gap: 3px;
+  width: max-content;
+  height: max-content;
+    
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(10, 10, 10);
+}
+

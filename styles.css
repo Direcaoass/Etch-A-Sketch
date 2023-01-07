@@ -4,31 +4,37 @@
   box-sizing: border-box;
 }
 
-header{
+header {
   text-align: center;
+  padding: 20px;
 }
 
-body{
-  background-color: gray;
+.inputsize {
+  margin-top:30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+body {
+  background-color: rgb(255, 255, 255);
 }
 
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  background-color: gray;
+  background-color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  gap: 3px;
-  width: max-content;
-  height: max-content;
-    
+  width: 40vw;
+  height: 40vw;
+
 }
 
 .square {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(10, 10, 10);
-}
+  border: 1px rgba(0, 0, 0, 0.1) solid;
 
+}

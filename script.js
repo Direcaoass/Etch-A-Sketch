@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-const button = document.querySelector('#btn');
+const button = document.querySelector('#new-size');
 
 
 function createSquares(squaresQty) {
@@ -12,11 +12,7 @@ function createSquares(squaresQty) {
 
 
 function changeSize() {
-    const newSize = parseInt(prompt('Type a number of squares per line (max 32)'));
-    if (newSize <= 0 || newSize > 32 || !newSize) {
-        alert('Type a number between 1 and 32')
-        return changeSize();
-    }
+    const newSize = button.value;
     container.innerText = '';
     container.style.setProperty('grid-template-columns', `repeat(${newSize}, 1fr)`);
     container.style.setProperty('grid-template-rows', `repeat(${newSize}, 1fr)`);
@@ -24,24 +20,45 @@ function changeSize() {
 
 }
 
-function createRGB() {
-    const randColor = Math.floor(Math.random() * 255);
-    return randColor
+function createRGB(factor) {
+    const randColor1 = factor * Math.floor(Math.random() * 255);
+    const randColor2 = factor * Math.floor(Math.random() * 255);
+    const randColor3 = factor * Math.floor(Math.random() * 255);
+    return `${randColor1},${randColor2},${randColor3}`
 }
+
+//EVENTS
 
 
 createSquares(16);
 
-button.addEventListener('click', () => {
+button.addEventListener('mousemove', () => {
     changeSize()
 })
 
 
 container.addEventListener('mouseover', (e) => {
 
-    const element = e.target;
-    
-    if (element.classList.contains('square'))
-        element.style.setProperty('background-color', `rgb(${createRGB()},${createRGB()},${createRGB()})`)
-    
+    const item = e.target;
+
+    if (item.classList.contains('square') && !item.dataset.darken) {
+
+        item.style.setProperty('background-color', `rgb(${(createRGB(1))})`);
+        item.dataset.darken = 5;
+    }
+
+    else if (item.classList.contains('square') && item.dataset.darken == 5) {
+
+        item.style.setProperty('background-color', `rgb(${(createRGB(0.5))})`);
+        item.dataset.darken = 10;
+    }
+
+    else if (item.classList.contains('square') && item.dataset.darken == 10) {
+
+        item.style.setProperty('background-color', `rgb(${(createRGB(0))})`);
+
+    }
 })
+
+
+

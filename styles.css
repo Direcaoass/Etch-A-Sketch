@@ -9,8 +9,8 @@ header {
   padding: 20px;
 }
 
-.inputsize {
-  margin-top:30px;
+.change-size {
+  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,19 +18,39 @@ header {
 
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(195, 239, 245);
+}
+
+.main-grid {
+  display: flex;
+  justify-items: center;
+}
+.options{
+  margin-left: 5%;
+  padding-top: 20px;
+  
+  
+}
+.options h2{
+  padding: 20px;
+  text-align: center;
+}
+
+.options #clear{
+  width:100%;
+
 }
 
 
-.container {
+.grid-container {
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 32%;
   background-color: rgb(255, 255, 255);
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
-  width: 40vw;
-  height: 40vw;
+  grid-template-columns: repeat(36, 1fr);
+  grid-template-rows: repeat(36, 1fr);
+  width: 35vw;
+  height: 35vw;
 
 }
 

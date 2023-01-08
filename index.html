@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.png">
     <script src="script.js" defer></script>
@@ -14,13 +14,30 @@
 <body>
     <header>
         <h1>Etch-A-Sketch</h1>
-        <div class="inputsize">
-        <label for="new-size">Change Grid Size</label>
-        <input id="new-size" type="range" min="1" max="70" defaultvalue="16" wfd-id="id0">
-        </div>  
-    </header>>
+        <p>Click inside grid to toggle pen<p>
 
-    <div class="container">
+    </header>
+
+    <div class="main-grid">
+
+        <div class="options">
+            <h2>Options</h2>
+            <div class="rainbow-color"><input name="color" id="rainbow-color" type="radio"> Rainbow Colors</input></div>
+            <br>
+            <div class="unic-color"><input name="color" id="unic-color" type="radio" checked> Unic Color</input></div>
+            <br>
+            <div class="pick-color"><input id="pick-color" type="color"> Pick a Color</input></div>
+            <br>
+            <div class="change-size">
+                <label for="new-size">Select Grid Size</label>
+                <input id="new-size" type="range" min="1" max="70" defaultvalue="36">
+            </div>
+            <br>
+            <button id="clear">Clear Grid</button>
+
+        </div>
+
+        <div class="grid-container"></div>
 
     </div>
 </body>
